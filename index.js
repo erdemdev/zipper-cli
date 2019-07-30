@@ -72,7 +72,9 @@ inquirer.prompt([
       '*.!(psd)',
     ],
   };
-  packageJSON.scripts.archive = 'zip';
+
+  if (packageJSON.scripts === undefined) packageJSON.scripts = {};
+  packageJSON.scripts.archive = 'zip',
 
   writeJSONSync('./package.json', packageJSON, {spaces: 2});
 
