@@ -1,0 +1,36 @@
+{
+  "name": "zipper-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "zip": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mutantcrow/zipper-cli.git"
+  },
+  "keywords": [
+    "zip cli",
+    "archive tool",
+    "archive cli"
+  ],
+  "author": "Erdem Arslan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mutantcrow/zipper-cli/issues"
+  },
+  "homepage": "https://github.com/mutantcrow/zipper-cli#readme",
+  "dependencies": {
+    "archiver": "^3.0.3",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-google": "^0.13.0"
+  }
+}
