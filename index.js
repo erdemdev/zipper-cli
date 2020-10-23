@@ -67,10 +67,20 @@ inquirer.prompt([
     outputFileName,
     outputChoice,
     customOutputPath,
-    globs: [
-      '!(.cache|.vscode|node_modules|src)*/**',
-      '*.!(psd)',
-    ],
+    globs: {
+      include: [
+        "**",
+      ],
+      exclude: [
+        "package.json",
+        "package-lock.json",
+        "node_modules/**",
+        ".vscode/**",
+        "**/scss/**",
+        "**/js/**",
+        "*.log",
+      ]
+    },
   };
 
   if (packageJSON.scripts === undefined) packageJSON.scripts = {};

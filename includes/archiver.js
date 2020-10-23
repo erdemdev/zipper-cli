@@ -62,10 +62,10 @@ module.exports = ({outputFileName, outputChoice, customOutputPath, globs}) => {
   archive.pipe(output);
 
   // append files from a glob pattern
-  const len = globs.length;
+  const len = globs.include.length;
   for (let i = 0; i < len; i++) {
-    const glob = globs[i];
-    archive.glob(glob);
+    const glob = globs.include[i];
+    archive.glob(glob, {ignore: globs.exclude});
   }
 
   /**
