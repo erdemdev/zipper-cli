@@ -27,7 +27,7 @@ module.exports = ({outputFileName, outputChoice, customOutputPath, globs}) => {
   // 'close' event is fired only when a file descriptor is involved
   output.on('close', function() {
     console.log(archive.pointer() + ' total bytes');
-    console.log('archiver has been finalized.');
+    console.log('zipper has been finalized.');
   });
 
   /**

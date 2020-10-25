@@ -8,7 +8,7 @@
  * @const cwd current working directory
  */
 const inquirer = require('inquirer');
-const archive = require('./includes/archiver');
+const archiver = require('./includes/archiver');
 const {writeJSONSync} = require('fs-extra');
 const cwd = require('process').cwd();
 
@@ -23,8 +23,8 @@ try {
   packageJSON = {};
 }
 
-if (packageJSON.archiver != undefined) {
-  archive(packageJSON.archiver);
+if (packageJSON.zipper != undefined) {
+  archiver(packageJSON.zipper);
   return;
 }
 
@@ -63,7 +63,7 @@ inquirer.prompt([
    * Setup package.json file.
    * Start archiving.
    */
-  packageJSON.archiver = {
+  packageJSON.zipper = {
     outputFileName,
     outputChoice,
     customOutputPath,
@@ -75,18 +75,15 @@ inquirer.prompt([
         "package.json",
         "package-lock.json",
         "node_modules/**",
-        ".vscode/**",
-        "**/scss/**",
-        "**/js/**",
-        "*.log",
       ]
     },
   };
 
   if (packageJSON.scripts === undefined) packageJSON.scripts = {};
-  packageJSON.scripts.archive = 'zip',
+
+  packageJSON.scripts.zipper = 'zipper',
 
   writeJSONSync('./package.json', packageJSON, {spaces: 2});
 
-  archive(packageJSON.archiver);
+  archiver(packageJSON.zipper);
 });

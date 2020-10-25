@@ -1,10 +1,10 @@
 {
   "name": "zipper-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "bin": {
-    "zip": "index.js"
+    "zipper": "index.js"
   },
   "scripts": {
     "start": "node index.js"
